@@ -1,4 +1,4 @@
-// Copyright 2020 The Terasology Foundation
+// Copyright 2021 The Terasology Foundation
 // SPDX-License-Identifier: Apache-2.0
 
 package org.terasology.persistence.typeHandling.event;
@@ -27,14 +27,12 @@ import org.terasology.reflection.metadata.FieldMetadata;
 import org.terasology.reflection.reflect.ReflectFactory;
 import org.terasology.reflection.reflect.ReflectionReflectFactory;
 import org.terasology.registry.CoreRegistry;
-import org.terasology.testUtil.ModuleManagerFactory;
-
-import static org.terasology.joml.test.VectorAssert.assertEquals;
 
 import java.io.IOException;
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.terasology.joml.test.VectorAssert.assertEquals;
 
 public class VectorEventSerializer {
 
@@ -60,7 +58,7 @@ public class VectorEventSerializer {
     public void setup() throws Exception {
         ContextImpl context = new ContextImpl();
         CoreRegistry.setContext(context);
-        ModuleManager moduleManager = ModuleManagerFactory.create();
+        ModuleManager moduleManager = new ModuleManager("");
         context.put(ModuleManager.class, moduleManager);
         context.put(ReflectFactory.class, reflectFactory);
         context.put(CopyStrategyLibrary.class, copyStrategies);

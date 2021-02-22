@@ -1,4 +1,4 @@
-// Copyright 2020 The Terasology Foundation
+// Copyright 2021 The Terasology Foundation
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.entitySystem;
 
@@ -15,7 +15,6 @@ import org.terasology.entitySystem.prefab.internal.PojoPrefab;
 import org.terasology.entitySystem.prefab.internal.PojoPrefabManager;
 import org.terasology.entitySystem.stubs.StringComponent;
 import org.terasology.registry.CoreRegistry;
-import org.terasology.testUtil.ModuleManagerFactory;
 import org.terasology.utilities.Assets;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,7 +32,7 @@ public class PojoPrefabManagerTest {
     public void setup() throws Exception {
         ContextImpl context = new ContextImpl();
         CoreRegistry.setContext(context);
-        ModuleManager moduleManager = ModuleManagerFactory.create();
+        ModuleManager moduleManager = new ModuleManager("");
 
         ModuleAwareAssetTypeManager assetTypeManager = new ModuleAwareAssetTypeManager();
         assetTypeManager.registerCoreAssetType(Prefab.class, PojoPrefab::new, "prefabs");

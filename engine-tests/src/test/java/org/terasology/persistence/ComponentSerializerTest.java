@@ -1,4 +1,4 @@
-// Copyright 2020 The Terasology Foundation
+// Copyright 2021 The Terasology Foundation
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.persistence;
 
@@ -29,7 +29,6 @@ import org.terasology.persistence.typeHandling.mathTypes.Vector3fTypeHandler;
 import org.terasology.protobuf.EntityData;
 import org.terasology.recording.RecordAndReplayCurrentStatus;
 import org.terasology.registry.CoreRegistry;
-import org.terasology.testUtil.ModuleManagerFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -45,7 +44,7 @@ public class ComponentSerializerTest {
 
     @BeforeAll
     public static void setupClass() throws Exception {
-        moduleManager = ModuleManagerFactory.create();
+        moduleManager = new ModuleManager("");
     }
 
     @BeforeEach

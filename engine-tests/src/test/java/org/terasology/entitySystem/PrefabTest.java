@@ -1,4 +1,4 @@
-// Copyright 2020 The Terasology Foundation
+// Copyright 2021 The Terasology Foundation
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.entitySystem;
 
@@ -30,7 +30,6 @@ import org.terasology.network.NetworkSystem;
 import org.terasology.persistence.typeHandling.TypeHandlerLibrary;
 import org.terasology.recording.RecordAndReplayCurrentStatus;
 import org.terasology.registry.CoreRegistry;
-import org.terasology.testUtil.ModuleManagerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +55,7 @@ public class PrefabTest {
         ContextImpl context = new ContextImpl();
         context.put(RecordAndReplayCurrentStatus.class, new RecordAndReplayCurrentStatus());
         CoreRegistry.setContext(context);
-        ModuleManager moduleManager = ModuleManagerFactory.create();
+        ModuleManager moduleManager = new ModuleManager("");
         context.put(ModuleManager.class, moduleManager);
 
         EntitySystemSetupUtil.addReflectionBasedLibraries(context);

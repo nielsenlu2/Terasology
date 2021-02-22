@@ -1,18 +1,5 @@
-/*
- * Copyright 2017 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2021 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.entitySystem;
 
 import com.google.common.collect.Lists;
@@ -37,7 +24,6 @@ import org.terasology.entitySystem.prefab.internal.PojoPrefab;
 import org.terasology.network.NetworkSystem;
 import org.terasology.recording.RecordAndReplayCurrentStatus;
 import org.terasology.registry.CoreRegistry;
-import org.terasology.testUtil.ModuleManagerFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -58,7 +44,7 @@ public class BaseEntityRefTest {
     @BeforeAll
     public static void setupClass() throws Exception {
         context = new ContextImpl();
-        ModuleManager moduleManager = ModuleManagerFactory.create();
+        ModuleManager moduleManager = new ModuleManager("");
         context.put(ModuleManager.class, moduleManager);
         ModuleAwareAssetTypeManager assetTypeManager = new ModuleAwareAssetTypeManager();
         assetTypeManager.registerCoreAssetType(Prefab.class,
